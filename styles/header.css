@@ -1,0 +1,179 @@
+.header{
+  height: 56px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+
+  background-color: white;
+
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+  border-bottom-color: rgb(228, 228, 228);
+
+  z-index: 100;
+}
+/* --------------------------------left-section---------------------------- */
+
+.left-section{  
+  display: flex;
+  align-items: center;
+}
+
+.hamburger-menu{
+  height: 24px;
+  margin-left: 24px;
+  margin-right: 24px;
+}
+
+.youtube-logo{
+  height: 20px;
+}
+/* --------------------------------middle-section---------------------------- */
+.middle-section{
+  flex: 1;
+  margin-left: 70px;
+  margin-right: 35px;
+  max-width: 500px;
+  display: flex;
+  align-items: center;
+}
+
+.search-box{
+  flex: 1;
+  /* Because if we put width 0 then it able to shrink and it has flex: 1 width already  */
+  width: 0;
+  height: 36px;
+  padding-left: 10px;
+  font-size: 16px;
+  border-radius: 2px;
+  border: 1px solid rgb(192, 192, 192);
+
+  /* Inset set the shadow inside the element */
+  box-shadow: inset 1px 2px 3px rgba(0, 0, 0, 0.05);
+}
+
+.search-box::placeholder{
+  font-family: Roboto, Arial;
+  font-size: 16px;
+}
+
+.search-button img{
+  height: 25px; 
+}
+
+.search-button{
+  height: 40px;
+  width: 66px;
+  margin-left: -1px;
+  margin-right: 10px;
+  background-color: rgb(240, 240, 240);
+  border: 1px solid rgb(192, 192, 192);
+}
+
+/* -------------------------------------------- */
+
+.search-button,
+.voice-search-button,
+.upload-icon-container,
+.youtube-apps-icon-container,
+.notification-icon-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.search-button .tooltip,
+.voice-search-button .tooltip,
+.upload-icon-container .tooltip,
+.youtube-apps-icon-container .tooltip,
+.notification-icon-container .tooltip{
+  position: absolute;
+  font-size: 12px;
+  color: white;
+  background-color: gray;
+  padding: 4px 8px;
+  border-radius: 2px;
+  bottom: -30px;
+
+  /* Here opacity 0 means element is hidden but we set opacity 1 when hover over on it */
+  opacity: 0;
+  transition: opacity 0.15s;
+
+  /* This will prevent any activity to happen when we move cursor on it(on opacity 0 element means hidden element) */
+  pointer-events: none;
+
+  white-space: nowrap;
+}
+
+/* Here we are targeting tooltip when we hover over search button element(If we hover over button then it target tooltip) */
+.search-button:hover .tooltip,
+.voice-search-button:hover .tooltip,
+.upload-icon-container:hover .tooltip,
+.youtube-apps-icon-container:hover .tooltip,
+.notification-icon-container:hover .tooltip{
+  opacity: 1;
+}
+
+/* -------------------------------------------- */
+
+.voice-search-button img{
+  height: 24px;
+}
+
+.voice-search-button{
+  width: 40px;
+  height: 40px;
+  border-radius: 20px;
+  border: none;
+  background-color: rgb(245, 245, 245);
+}
+
+/* --------------------------------right-section---------------------------- */
+
+.right-section{
+  width: 180px;
+  margin-right: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* It prevent to shrink the space-between elements when we decrease width of screen */
+  flex-shrink: 0;
+}
+
+.upload-icon{
+  height: 24px;
+}
+
+.youtube-apps-icon{
+  height: 24px;
+}
+
+.notifications-icon{
+  height: 24px;
+}
+
+.current-user-profile{
+  height: 32px;
+  border-radius: 16px;
+}
+
+.notification-icon-container{
+  position: relative;
+}
+
+.notification-count{
+  font-size: 11px;
+  position: absolute;
+  top: -2px;
+  right: -5px;
+  color: white;
+  background-color: rgb(200, 0 ,0);
+  padding: 2px 5px;
+  border-radius: 10px;;
+}
